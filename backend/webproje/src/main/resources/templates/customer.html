@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>Müşteriler</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+          crossorigin="anonymous">
+    </head>
+    <body class = "bg-dark">
+
+    <div class = "w-75 mx-auto my-4 ">
+
+        <h1 class = "text-primary">LOGO</h1>
+        <button 
+            class = "btn btn-info mb-4"
+            type = "button"
+            data-toggle = "modal"
+            data-target = "#customerModal"
+            >Müşteri ekle</button>
+
+
+        <table class = "table table-dark table-hover table-bordered table-striped">
+            <caption class = "text-light">Müşteri listesi</caption>
+            <thead class = "text-center">
+            <th>ID</th>
+            <th>İsim</th>
+            <th>Adres</th>
+            <th>Müşteri borcu (₺)</th>
+            <th>İşlemler</th>
+            </thead>
+            <tbody class = "text-center">
+                <tr th:each="customer:${customers}">
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.debt}"></td>
+                    <td>
+                        <button 
+                            class = "btn btn-warning" type="button"
+                            data-target = "#editModal"
+                            data-toggle = modal
+                            >Düzenle
+                        </button>
+
+            <spring:url value="/customers/delete/${customer}" var="deleteUrl"/>
+            <button class="btn btn-danger" onclick="delete('${deleteUrl}')">Sil</button>
+
+            <button class = "btn btn-success" href="/product.html">
+                Ürün ekle</button>
+            </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- ekleme modal kodları-->
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Yeni Müşteri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form th:action="@{/customers/addNew}" method="post">
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">İsim:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">email:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Adres:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Borç:</label>
+                            <input type="number" class="form-control" id="recipient-name" name="debt">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">kaydet</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Düzenleme modal kodları-->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Yeni Müşteri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form th:action="@{/customers/update}" method="put">
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">id:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="id" readonly>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">isim:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">teslimat noktası:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="teslimatNoktasi">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">borc:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="borc">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">kaydet</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script 
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous">
+
+    </script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
+        crossorigin="anonymous">
+
+    </script>
+</body>
+</html>

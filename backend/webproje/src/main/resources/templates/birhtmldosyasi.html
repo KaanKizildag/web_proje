@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+
+        </tr>
+
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
+
+    <div>
+        <img onclick="burayaTiklandi()" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ae4eXdGjmT2CTLUktR_rXgHaHa%26pid%3DApi&f=1">
+        <button onclick="bakBuraya()" type="button" id="myButton">Buraya tıklayın</button>
+    </div>
+    
+    <script>
+        let data =
+            [
+                { "name": "Shyam", "email": "shyamjaiswal@gmail.com" },
+                { "name": "Bob", "email": "bob32@gmail.com" },
+                { "name": "Jai", "email": "jai87@gmail.com" },
+                { "name": "Kaan", "email": "kaan@gmail.com" }
+            ]
+
+        bastir(data)
+
+        function bastir(myData) {
+            var table = document.getElementById('myTable');
+
+            for (var i = 0; i < data.length; i++) {
+                var row =
+                    `
+            <tr>
+                <td>${data[i]['name']}</td>
+                <td>${data[i]['email']}</td>
+            </tr>
+              `
+                table.innerHTML += row;
+            }
+        }
+        var flag = false
+        function bakBuraya() {
+            let button = document.getElementById("myButton")
+            if (flag == false) {
+                button.outerHTML =
+                    '<button onclick="bakBuraya()" type="button" id ="myButton">buraya tıkla buraya</button>'
+
+            }
+            else {
+                button.outerHTML =
+                    '<button onclick="bakBuraya()" type="button" id ="myButton">Buraya tıklayın</button>'
+            }
+            flag = !flag;
+        }
+
+        function burayaTiklandi(){
+            document.write("<h1>Buray'a Tıkladınız.</h1>")
+        }
+
+    </script>
+
+
+</body>
+
+</html>
