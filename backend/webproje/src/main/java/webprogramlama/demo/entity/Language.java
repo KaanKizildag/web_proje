@@ -1,6 +1,7 @@
 package webprogramlama.demo.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,10 +12,12 @@ import java.util.List;
 @Table(name = "language")
 @Getter
 @Setter
-public class Language {
+@NoArgsConstructor
+public class Language{
 
     @Id
     @Column(name = "language_id")
+    @GeneratedValue(generator = "language_language_id_seq")
     private Long id;
     @Column(name = "name")
     private String name;
@@ -22,4 +25,5 @@ public class Language {
     Date last_update;
     @OneToMany(mappedBy = "language")
     private List<Film> filmList;
+
 }

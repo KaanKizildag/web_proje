@@ -12,11 +12,13 @@ import javax.persistence.*;
 public class Film {
     @Id
     @Column(name = "film_id")
+    @GeneratedValue(generator = "film_film_id_seq")
     private Long id;
     @Column(name = "title")
     private String title;
     @Column(name = "description")
     private String description;
+    @JoinColumn(name = "language_id")
     @ManyToOne
     private Language language;
 }

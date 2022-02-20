@@ -13,11 +13,31 @@ public class FilmService {
     @Autowired
     private FilmRepository filmRepository;
 
-    public List<FilmLanguageDTO> findAllDtoile(){
+    public List<Film> findAll(){
+        return filmRepository.findAll();
+    }
+
+    public Film findByTitle(String title){
+        return filmRepository.findByTitle(title);
+    }
+
+    public List<FilmLanguageDTO> findAllDtoile() {
         return filmRepository.findAllDtoile();
     }
 
-    public Film findByQueryIle(String name){
+    public void save(Film film) {
+        filmRepository.save(film);
+    }
+
+    public void delete(Film film) {
+        filmRepository.delete(film);
+    }
+
+    public void deleteByTitle(String title){
+        filmRepository.deleteByTitle(title);
+    }
+
+    public Film findByQueryIle(String name) {
         return filmRepository.findByQueryIle(name);
     }
 }

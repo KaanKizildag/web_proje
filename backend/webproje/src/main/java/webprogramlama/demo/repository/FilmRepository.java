@@ -15,4 +15,7 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
     @Query("From Film f, Language l where f.title = :name and l.id = f.language.id")
     Film findByQueryIle(String name);
 
+    Film findByTitle(String title);
+
+    void deleteByTitle(String title);
 }
