@@ -1,29 +1,38 @@
 package webprogramlama.demo.service.concrete;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import webprogramlama.demo.entity.Actor;
+import webprogramlama.demo.entity.dtos.ActorDTO;
 import webprogramlama.demo.repository.ActorRepository;
-import webprogramlama.demo.service.abstracts.ActorService;
 
 import java.util.List;
 
 @Service
-public class ActorServiceImpl implements ActorService {
+public class ActorService {
 
-    @Autowired
-    private ActorRepository actorRepository;
+    private final ActorRepository actorRepository;
+    private final ModelMapper modelMapper;
 
-    @Override
+    public ActorService(ActorRepository actorRepository, ModelMapper modelMapper) {
+        this.actorRepository = actorRepository;
+        this.modelMapper = modelMapper;
+    }
+
+    public void save(ActorDTO actorDTO){
+        Actor actor = modelMapper.map(actorDTO, Actor.class);
+        actorRepository.save(actor);
+    }
+
+
     public Long countByFirstNameIsIn(List<String> firstNameList) {
         return actorRepository.countByFirstNameIsIn(firstNameList);
     }
 
-    @Override
     public boolean existsByFirstNameAndLastName(String firstName, String lastName) {
         return actorRepository.existsByFirstNameAndLastName(firstName, lastName);
     }
 
-    @Override
     public Long countByFirstName(String fistName) {
         return actorRepository.countByFirstName(fistName);
     }
