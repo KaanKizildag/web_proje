@@ -6,8 +6,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import webprogramlama.demo.entity.Film;
-import webprogramlama.demo.service.concrete.FilmService;
-import webprogramlama.demo.service.concrete.LanguageService;
+import webprogramlama.demo.service.FilmService;
+import webprogramlama.demo.service.LanguageService;
 
 public class FilmServiceTest {
 

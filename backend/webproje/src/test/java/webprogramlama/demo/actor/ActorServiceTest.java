@@ -3,7 +3,7 @@ package webprogramlama.demo.actor;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
-import webprogramlama.demo.service.concrete.ActorService;
+import webprogramlama.demo.service.ActorService;
 
 import static org.junit.Assert.*;
 

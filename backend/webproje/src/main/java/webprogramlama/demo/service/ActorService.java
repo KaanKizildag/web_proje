@@ -1,4 +1,4 @@
-package webprogramlama.demo.service.concrete;
+package webprogramlama.demo.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

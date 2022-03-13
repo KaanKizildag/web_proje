@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import webprogramlama.demo.entity.Film;
 import webprogramlama.demo.entity.dtos.FilmLanguageDTO;
-import webprogramlama.demo.service.concrete.FilmService;
+import webprogramlama.demo.service.FilmService;
 
 import java.util.List;
 

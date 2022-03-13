@@ -15,9 +15,7 @@ public class Actor {
 
     @Id
     @Column(name = "actor_id")
-    @SequenceGenerator(
-            name = "actor_actor_id_seq",
-            allocationSize = 1)
+    @SequenceGenerator(name = "actor_actor_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "actor_actor_id_seq")
     private Long id;
 

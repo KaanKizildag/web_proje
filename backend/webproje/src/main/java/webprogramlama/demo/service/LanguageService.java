@@ -1,4 +1,4 @@
-package webprogramlama.demo.service.concrete;
+package webprogramlama.demo.service;
 
 import org.springframework.stereotype.Service;
 import webprogramlama.demo.entity.Language;

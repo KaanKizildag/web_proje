@@ -2,9 +2,8 @@ package webprogramlama.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import webprogramlama.demo.entity.Actor;
 import webprogramlama.demo.entity.dtos.ActorDTO;
-import webprogramlama.demo.service.concrete.ActorService;
+import webprogramlama.demo.service.ActorService;
 
 import java.util.List;
 

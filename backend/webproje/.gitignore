@@ -33,3 +33,5 @@ build/
 .vscode/
 
 nbactions.xml
+## rapor 
+*.pdf
