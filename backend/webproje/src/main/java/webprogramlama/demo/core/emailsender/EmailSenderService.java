@@ -1,4 +1,4 @@
-package webprogramlama.demo.service;
+package webprogramlama.demo.core.emailsender;
 
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;

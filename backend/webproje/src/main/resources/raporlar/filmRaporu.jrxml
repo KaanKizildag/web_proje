@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="film_raporu" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87e21773-d838-4175-8d57-11cba92f1ecb">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <parameter name="musteriAdi" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <field name="id" class="java.lang.Long">
+        <property name="com.jaspersoft.studio.field.name" value="id"/>
+        <property name="com.jaspersoft.studio.field.label" value="id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+    </field>
+    <field name="description" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="description"/>
+        <property name="com.jaspersoft.studio.field.label" value="description"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+    </field>
+    <field name="title" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="title"/>
+        <property name="com.jaspersoft.studio.field.label" value="title"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+    </field>
+    <background>
+        <band/>
+    </background>
+    <title>
+        <band height="72">
+            <frame>
+                <reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="2716b10a-aac7-42c9-a52d-1d2e1c1b5888"/>
+                <staticText>
+                    <reportElement x="470" y="40" width="75" height="20" forecolor="#FFFFFF" uuid="c669009c-34c3-4684-a6b4-aa8de9eec86b"/>
+                    <textElement textAlignment="Right">
+                        <font size="14" isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[Film raporu]]></text>
+                </staticText>
+                <textField>
+                    <reportElement x="30" y="20" width="180" height="50" forecolor="#FFFFFF" uuid="ec6bb839-e2d1-4f1d-8d5e-60e92b457b89"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle">
+                        <font size="18"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$P{musteriAdi}]]></textFieldExpression>
+                </textField>
+                <image vAlign="Middle">
+                    <reportElement x="545" y="0" width="50" height="50" uuid="ec4e58ff-fa68-4d25-a0f7-4531a46d8854"/>
+                    <imageExpression><![CDATA["https://www.carlogos.org/logo/GT-R-logo-2560x1440.png"]]></imageExpression>
+                </image>
+            </frame>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="13"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61">
+            <line>
+                <reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="c23bfb2e-4c1f-4355-88fd-f8a2722f195a"/>
+            </line>
+            <staticText>
+                <reportElement x="0" y="30" width="100" height="19" uuid="651096e5-1e36-4f94-a189-c8039594824c">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[#]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="30" width="100" height="19" uuid="450fe84f-6336-47e7-a882-d6b22ddcdcfa">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[Başlık]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="30" width="250" height="19" uuid="a4d90779-e1ad-44c4-b021-3de790716ccc">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Açıklama]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="450" y="30" width="45" height="19" uuid="2d72acf8-5362-4bee-bb0b-9fd6d40b5557">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[#]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="495" y="30" width="27" height="19" uuid="1cbb3f59-73bb-4e04-bd84-c19903b25a43">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[Logo]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="50">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="5990f32d-2e49-43ff-a3fb-7d42043f26c7"/>
+                <graphicElement>
+                    <pen lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="-5" y="26" width="100" height="19" uuid="b196ac7a-4a34-4a10-8920-b315b4adfa13"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="95" y="26" width="100" height="19" uuid="3fa5b3df-4aab-41fb-a764-441d65e9181c"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="195" y="26" width="250" height="19" uuid="9d6468fc-b306-4e14-8e29-9f3c543dda46"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="445" y="26" width="45" height="19" uuid="8ed598bc-6460-4ca8-81d5-6d451820c05a"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <image vAlign="Middle">
+                <reportElement x="494" y="23" width="31" height="27" uuid="bf9df78f-3ce9-41a6-8dc5-becde9d45a32"/>
+                <imageExpression><![CDATA["https://www.carlogos.org/logo/GT-R-logo-2560x1440.png"]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <columnFooter>
+        <band/>
+    </columnFooter>
+    <pageFooter>
+        <band height="17">
+            <textField>
+                <reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="c37faaf4-c6fe-4c33-9114-770b738b747e"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="9a92d778-ae6d-44e2-ba7b-daf9aa8c6fe9"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="0" y="4" width="100" height="13" uuid="b9182a08-193b-4114-a664-43c95f91dccf"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band/>
+    </summary>
+</jasperReport>
