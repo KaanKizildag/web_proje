@@ -3,6 +3,7 @@ package webprogramlama.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import webprogramlama.demo.entity.dtos.ActorDTO;
+import webprogramlama.demo.entity.dtos.VeriTabaniNesnesiDTO;
 import webprogramlama.demo.service.ActorService;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ActorController {
     }
 
     @PostMapping("/save")
-    public void save(@RequestBody ActorDTO actorDTO){
+    public void save(@RequestBody ActorDTO actorDTO) {
         actorService.save(actorDTO);
     }
 
@@ -29,4 +30,13 @@ public class ActorController {
         return actorService.countByFirstName(firstName);
     }
 
+//    @PostMapping("/dtoParametresi")
+//    public String dtoToString(@RequestBody VeriTabaniNesnesiDTO veriTabaniNesnesiDTO) {
+//        return actorService.dtoToString(veriTabaniNesnesiDTO);
+//    }
+
+    @PostMapping("/toDto")
+    public VeriTabaniNesnesiDTO toDTO() {
+        return actorService.toDto("kaan");
+    }
 }
